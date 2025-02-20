@@ -7,7 +7,7 @@ function connector() {
       cylinder(10, 25),
       cylinder(2, 28).translate_z(5),
     ),
-    cylinder(20, 23),
+    cylinder(20, 18),
     cube([100, 100, 40]).translate_y(45),
   );
 }
@@ -16,13 +16,13 @@ function funnel() {
   return intersection(
     difference(
       union(
-        cylinder(50, 28),
-      ),
-      cylinder(60, 25),
-      cube([200, 200, 60]).translate_y(95),
+        cylinder(80, 28).debug(),
+      ).translate_z(20),
+      cylinder(90, 25),
+      cube([200, 200, 100]).translate_y(95),
     ),
-    sphere(50).translate_y(-15).translate_z(-30)
-  );
+    sphere(50).translate_y(-15).translate_z(-10)
+  ).translate_z(-5);
 }
 
 export default function () {
