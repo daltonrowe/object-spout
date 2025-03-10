@@ -31,8 +31,14 @@ function funnel() {
 }
 
 export default function () {
-  return difference(
-    union(connector(), funnel().translate_z(30)),
-    cylinder(50, 25).debug().rotate_x(-20).translate_y(7),
+  return union(
+    difference(cylinder(3, 7, { $fn: 20 }), cylinder(6, 4, { $fn: 20 }))
+      .rotate_x(90)
+      .translate_y(-26.49)
+      .translate_z(-12),
+    difference(
+      union(connector(), funnel().translate_z(30)),
+      cylinder(50, 25).rotate_x(-20).translate_y(7),
+    ),
   );
 }
